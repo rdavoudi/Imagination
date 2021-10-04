@@ -3,13 +3,22 @@
     <PropertyGroup>
         <TargetFramework>net6.0</TargetFramework>
         <RootNamespace>Imagination</RootNamespace>
+        <UserSecretsId>c80c0245-6492-443d-a207-e333d5c39d32</UserSecretsId>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+        <DockerfileContext>..\..\..</DockerfileContext>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+      <WarningLevel>5</WarningLevel>
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.11.1" />
       <PackageReference Include="OpenTelemetry.Exporter.Jaeger" Version="1.2.0-alpha1" />
       <PackageReference Include="OpenTelemetry.Extensions.Hosting" Version="1.0.0-rc7" />
       <PackageReference Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.0.0-rc7" />
       <PackageReference Include="OpenTelemetry.Instrumentation.Http" Version="1.0.0-rc7" />
+      <PackageReference Include="System.Drawing.Common" Version="5.0.2" />
     </ItemGroup>
 
 </Project>

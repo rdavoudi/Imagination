@@ -2,17 +2,19 @@ version: '2.2'
 
 services:
 
-  your_service:
+  imagination_server:
     # Please add your service here and serve it on port 5000.
     build:
-      dockerfile: Dockerfile
+      dockerfile: src/Imagination.Server/Imagination.Server/Dockerfile
       context: .
     mem_limit: 512m
     mem_reservation: 512m
+    ports:
+      - "5000:5000"
     depends_on:
       - jaeger
       - httpbin
-
+    
   jaeger:
     image: jaegertracing/all-in-one:latest
     ports:
